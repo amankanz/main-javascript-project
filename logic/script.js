@@ -29,7 +29,7 @@ const user_feedback = {
   computerWin: "Computer wins!",
   draw: "TIE!",
   bomb: "You dummy! Enter valid input 😂",
-  quit: "Looser!😆. 🏃‍♂️🏃‍♀️WHY ARE YOU RUNNING! ",
+  quit: "Looser!😆. 🏃‍♂️🏃‍♀️WHY ARE YOU RUNNING? ",
 };
 
 // User Input Validation
@@ -62,4 +62,4 @@ const play_round = (playerSelection, computerSelection) => {
   console.log(computerSelection);
 };
 
-// play_round(user_input_validation(), computer_play());
+play_round(user_input_validation(), computer_play());
