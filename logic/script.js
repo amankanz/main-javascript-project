@@ -1,13 +1,4 @@
-/*
-Begin with a function called
-computerPlay that will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’. We’ll use this
-function in the game to make the computer’s play.
- */
-
-/*
-Make your function’s playerSelection parameter case-insensitive (so users can
-input rock, ROCK, RocK or any other variation).
-*/
+// ROCK PAPER SCISSORS Game!!! 👨‍💻👩‍💻
 
 // Computer Move / Computer_selection
 const computer_play = () => {
@@ -15,51 +6,136 @@ const computer_play = () => {
 
   switch (random_num) {
     case 0:
-      return "Rock";
+      return "rock";
     case 1:
-      return "Paper";
+      return "paper";
     default:
-      return "Scissors";
+      return "scissors";
   }
 };
 
 // Feedback Messages to the user
 const user_feedback = {
-  userWin: "You win!",
-  computerWin: "Computer wins!",
-  draw: "TIE!",
-  bomb: "You dummy! Enter valid input 😂",
+  userWin: "You win!😉",
+  computerWin: "You Lose!🤖",
+  draw: "👔, It's a Tie!",
+  bomb: "You dummy🤡! Enter valid input 😂",
   quit: "Looser!😆. 🏃‍♂️🏃‍♀️WHY ARE YOU RUNNING? ",
 };
 
-// User Input Validation
-const user_input_validation = () => {
-  const user_input = prompt(`Make your Move Buddy!
-  Enter one of the following options:
-  Rock, Paper or Scissors.
-  Good luck! 👲🤞 `);
-
-  if (user_input === null) return `${user_feedback.quit}`;
-  else if (typeof user_input === "string") {
-    const set_lower_case = user_input.toLowerCase();
+// Validation
+function input_validation(userInput) {
+  if (typeof userInput === "string") {
+    const set_lower_case = userInput.toLowerCase();
 
     if (set_lower_case === "rock") return "rock";
     else if (set_lower_case === "paper") return "paper";
     else if (set_lower_case === "scissors") return "scissors";
     else return `${user_feedback.bomb}`;
   }
-};
+}
 
-// User Move / user_selection
-const player_selection = () => {
-  const user_selection = user_input_validation();
-  return user_selection;
-};
+// User Input
+function player_selection() {
+  const user_input = prompt(`Make your 5️⃣ Moves Buddy!
+  Enter 1️⃣ of the following options:
+  Rock ⛰, Paper 📃 or Scissors ✂.
+  Best of luck! 👲🤞😻 `);
 
-// Play round
-const play_round = (playerSelection, computerSelection) => {
-  console.log(playerSelection);
-  console.log(computerSelection);
-};
+  if (user_input === null) {
+    return `${user_feedback.quit}`;
+  } else {
+    return input_validation(user_input);
+  }
+}
 
-play_round(user_input_validation(), computer_play());
+// SCORES
+let userScore = 0;
+let computerScore = 0;
+
+function playRound(playerSelection, computerSelection) {
+  // Tie
+  if (playerSelection === computerSelection) {
+    return `${user_feedback.draw}\n
+    Player's move 😇: ${playerSelection}
+    Computer's move🤖: ${computerSelection}`;
+  } else if (playerSelection === "null") {
+    return `${user_feedback.quit}`;
+  } else if (playerSelection === "rock") {
+    // Rock
+    if (playerSelection === "rock") {
+      if (computerSelection === "paper") {
+        computerScore++;
+        return `${user_feedback.computerWin} Paper beats Rock`;
+      } else {
+        userScore++;
+        return `${user_feedback.userWin} Rock beats ${computerSelection}`;
+      }
+    }
+  } else if (playerSelection === "paper") {
+    // Paper
+    if (playerSelection === "paper") {
+      if (computerSelection === "scissors") {
+        computerScore++;
+        return `${user_feedback.computerWin} Scissors beats Paper`;
+      } else {
+        userScore++;
+        return `${user_feedback.userWin} Paper beats ${computerSelection}!`;
+      }
+    }
+  } else if (playerSelection === "scissors") {
+    // Scissors
+    if (playerSelection === "scissors") {
+      if (computerSelection === "rock") {
+        computerScore++;
+        return `${user_feedback.computerWin} Rock beats Scissors`;
+      } else {
+        userScore++;
+        return `${user_feedback.userWin} Scissors beats ${computerSelection}!`;
+      }
+    }
+  } else {
+    return playerSelection;
+  }
+}
+
+// const playerSelection = player_selection();
+// const computerSelection = computer_play();
+
+// console.log(playRound(playerSelection, computerSelection));
+
+// console.log(`User Score: ${userScore}
+// Computer Score: ${computerScore}`);
+// console.log(`Computer move: ${computerSelection}
+// Player move: ${playerSelection}`);
+
+// Game
+function game() {
+  for (let i = 1; i <= 5; i++) {
+    const playerSelection = player_selection();
+    const computerSelection = computer_play();
+
+    console.log(playRound(playerSelection, computerSelection));
+  }
+
+  if (userScore > computerScore) {
+    console.log(`
+    Player Score:${userScore}
+    Computer Score:${computerScore}
+    Excellent 👌 buddy,
+    you're 👍 good at this 👲🤟😻✨`);
+  } else if (userScore < computerScore) {
+    console.log(`
+    Player Score:${userScore}
+    Computer Score:${computerScore}
+    Lost buddy!
+    The 🤖 has beaten you. You're JUST a potato🍠 at this game😂`);
+  } else if (userScore === computerScore) {
+    console.log(`
+    😇Player Score:${userScore}
+    🤖Computer Score:${computerScore}
+    Draw! 0️⃣ - 0️⃣ 😂`);
+  }
+}
+
+game();
