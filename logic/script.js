@@ -99,16 +99,6 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-// const playerSelection = player_selection();
-// const computerSelection = computer_play();
-
-// console.log(playRound(playerSelection, computerSelection));
-
-// console.log(`User Score: ${userScore}
-// Computer Score: ${computerScore}`);
-// console.log(`Computer move: ${computerSelection}
-// Player move: ${playerSelection}`);
-
 // Game
 function game() {
   for (let i = 1; i <= 5; i++) {
