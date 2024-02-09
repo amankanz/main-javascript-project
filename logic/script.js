@@ -1,5 +1,14 @@
 // ROCK PAPER SCISSORS Game!!! 👨‍💻👩‍💻
 
+// Intro Message
+console.log(`Welcome to the Rock, Paper, Scissors game!
+  My name is Darling_Code.👲
+  Follow the instructions to play the Game ☝😇
+  
+  To start the game, in the console, type: start_game();
+  then press 'Enter' 👩‍💻
+  `);
+
 // Computer Move / Computer_selection
 const computer_play = () => {
   const random_num = Math.floor(Math.random() * 3);
@@ -24,19 +33,19 @@ const user_feedback = {
 };
 
 // Validation
-function input_validation(userInput) {
+const input_validation = (userInput) => {
   if (typeof userInput === "string") {
-    const set_lower_case = userInput.toLowerCase();
+    const text_input = userInput.toLowerCase();
 
-    if (set_lower_case === "rock") return "rock";
-    else if (set_lower_case === "paper") return "paper";
-    else if (set_lower_case === "scissors") return "scissors";
+    if (text_input === "rock") return "rock";
+    else if (text_input === "paper") return "paper";
+    else if (text_input === "scissors") return "scissors";
     else return `${user_feedback.bomb}`;
   }
-}
+};
 
 // User Input
-function player_selection() {
+const player_selection = () => {
   const user_input = prompt(`Make your 5️⃣ Moves Buddy!
   Enter 1️⃣ of the following options:
   Rock ⛰, Paper 📃 or Scissors ✂.
@@ -47,7 +56,7 @@ function player_selection() {
   } else {
     return input_validation(user_input);
   }
-}
+};
 
 // SCORES
 let userScore = 0;
@@ -99,18 +108,8 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-// const playerSelection = player_selection();
-// const computerSelection = computer_play();
-
-// console.log(playRound(playerSelection, computerSelection));
-
-// console.log(`User Score: ${userScore}
-// Computer Score: ${computerScore}`);
-// console.log(`Computer move: ${computerSelection}
-// Player move: ${playerSelection}`);
-
 // Game
-function game() {
+const game = () => {
   for (let i = 1; i <= 5; i++) {
     const playerSelection = player_selection();
     const computerSelection = computer_play();
@@ -128,14 +127,42 @@ function game() {
     console.log(`
     Player Score:${userScore}
     Computer Score:${computerScore}
-    Lost buddy!
+    You lost buddy!
     The 🤖 has beaten you. You're JUST a potato🍠 at this game😂`);
   } else if (userScore === computerScore) {
     console.log(`
     😇Player Score:${userScore}
     🤖Computer Score:${computerScore}
-    Draw! 0️⃣ - 0️⃣ 😂`);
+    Draw, No one Wins! 0️⃣ - 0️⃣ 😂`);
   }
-}
+};
 
-game();
+// game();
+
+// Start Game
+const start_game = () => {
+  const choice = prompt("Type 'START' to begin the game or 'EXIT' to quit!👲");
+  if (choice === null) {
+    console.log(`You didn't confirm to start the game. ${user_feedback.quit}`);
+  } else {
+    if (choice.toLowerCase() === "start") {
+      const start_confirmation = prompt(
+        `ARE YOU READY?! 😻Type 'START GAME' to begin playing✨🤟`
+      );
+
+      if (start_confirmation.toLowerCase() === "start game") {
+        game();
+      } else {
+        console.log(`${user_feedback.bomb}`);
+        start_game();
+      }
+    } else if (choice.toLowerCase() === "exit") {
+      console.log("Thank you for playing! Goodbye!🖐👲");
+    } else {
+      console.log(`${user_feedback.bomb}`);
+      start_game();
+    }
+  }
+};
+
+// start_game();
