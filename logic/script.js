@@ -4,6 +4,9 @@
 console.log(`Welcome to the Rock, Paper, Scissors game!
   My name is Darling_Code.👲
   Follow the instructions to play the Game ☝😇
+  
+  To start the game, in the console, type: game();
+  then press 'Enter' 👩‍💻
   `);
 
 // Computer Move / Computer_selection
@@ -134,4 +137,4 @@ const game = () => {
   }
 };
 
-game();
+// game();
