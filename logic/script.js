@@ -141,13 +141,15 @@ const game = () => {
 
 // Start Game
 const start_game = () => {
-  const choice = prompt("Type 'START' to begin the game or 'EXIT' to quit!👲");
+  const choice = prompt(
+    "👩‍💻Type 'START' to begin the game or 'EXIT' to quit!👲"
+  );
   if (choice === null) {
     console.log(`You didn't confirm to start the game. ${user_feedback.quit}`);
   } else {
     if (choice.toLowerCase() === "start") {
       const start_confirmation = prompt(
-        `ARE YOU READY?! 😻Type 'START GAME' to begin playing✨🤟`
+        `😤YOU READY?! 👩‍💻Type 'START GAME' to begin playing✨🤟😻`
       );
 
       if (start_confirmation.toLowerCase() === "start game") {
