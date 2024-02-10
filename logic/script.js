@@ -5,7 +5,7 @@ console.log(`Welcome to the Rock, Paper, Scissors game!
   My name is Darling_Code.👲
   Follow the instructions to play the Game ☝😇
   
-  To start the game, in the console, type: game();
+  To start the game, in the console, type: start_game();
   then press 'Enter' 👩‍💻
   `);
 
@@ -113,7 +113,7 @@ const game = () => {
   for (let i = 1; i <= 5; i) {
     const playerSelection = player_selection();
     const computerSelection = computer_play();
-    if(playerSelection !== user_feedback.bomb){
+    if (playerSelection !== user_feedback.bomb) {
       i++;
     }
     console.log(playRound(playerSelection, computerSelection));
