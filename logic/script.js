@@ -139,4 +139,32 @@ const game = () => {
   }
 };
 
-// game();
+// Start Game
+const start_game = () => {
+  const choice = prompt(
+    "👩‍💻Type 'START' to begin the game or 'EXIT' to quit!👲"
+  );
+  if (choice === null) {
+    console.log(`You didn't confirm to start the game. ${user_feedback.quit}`);
+  } else {
+    if (choice.toLowerCase() === "start") {
+      const start_confirmation = prompt(
+        `😤YOU READY?! 👩‍💻Type 'START GAME' to begin playing✨🤟😻`
+      );
+
+      if (start_confirmation.toLowerCase() === "start game") {
+        game();
+      } else {
+        console.log(`${user_feedback.bomb}`);
+        start_game();
+      }
+    } else if (choice.toLowerCase() === "exit") {
+      console.log("Thank you for playing! Goodbye!🖐👲");
+    } else {
+      console.log(`${user_feedback.bomb}`);
+      start_game();
+    }
+  }
+};
+
+// start_game();
