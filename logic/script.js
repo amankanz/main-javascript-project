@@ -5,7 +5,7 @@ console.log(`Welcome to the Rock, Paper, Scissors game!
   My name is Darling_Code.👲
   Follow the instructions to play the Game ☝😇
   
-  To start the game, in the console, type: game();
+  To start the game, in the console, type: start_game();
   then press 'Enter' 👩‍💻
   `);
 
@@ -113,7 +113,7 @@ const game = () => {
   for (let i = 1; i <= 5; i) {
     const playerSelection = player_selection();
     const computerSelection = computer_play();
-    if(playerSelection !== user_feedback.bomb){
+    if (playerSelection !== user_feedback.bomb) {
       i++;
     }
     console.log(playRound(playerSelection, computerSelection));
@@ -151,12 +151,17 @@ const start_game = () => {
       const start_confirmation = prompt(
         `😤YOU READY?! 👩‍💻Type 'START GAME' to begin playing✨🤟😻`
       );
-
-      if (start_confirmation.toLowerCase() === "start game") {
-        game();
+      if (start_confirmation === null) {
+        console.log(
+          `You didn't confirm to start the game. ${user_feedback.quit}`
+        );
       } else {
-        console.log(`${user_feedback.bomb}`);
-        start_game();
+        if (start_confirmation.toLowerCase() === "start game") {
+          game();
+        } else {
+          console.log(`${user_feedback.bomb}`);
+          start_game();
+        }
       }
     } else if (choice.toLowerCase() === "exit") {
       console.log("Thank you for playing! Goodbye!🖐👲");
