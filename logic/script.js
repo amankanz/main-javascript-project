@@ -149,7 +149,7 @@ const start_game = () => {
   } else {
     if (choice.toLowerCase() === "start") {
       const start_confirmation = prompt(
-        `😤YOU READY?! 👩‍💻Type 'START GAME' to begin playing✨🤟😻`
+        `😤YOU'RE READY?! 👩‍💻Type 'START GAME' to begin playing✨🤟😻`
       );
 
       if (start_confirmation.toLowerCase() === "start game") {
