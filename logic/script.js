@@ -35,7 +35,7 @@ const user_feedback = {
 // Validation
 const input_validation = (userInput) => {
   if (typeof userInput === "string") {
-    const text_input = userInput.toLowerCase();
+    const text_input = userInput.toLowerCase().trim();
 
     if (text_input === "rock") return "rock";
     else if (text_input === "paper") return "paper";
@@ -117,11 +117,7 @@ const game = () => {
       i++;
     }
     if (playerSelection === user_feedback.quit) {
-<<<<<<< HEAD
-      console.log(user_feedback.quit);
-=======
       console.log(`WHY LEAVING?!😭`);
->>>>>>> main
       break;
     }
     console.log(playRound(playerSelection, computerSelection));
@@ -155,7 +151,7 @@ const start_game = () => {
   if (choice === null) {
     console.log(`You didn't confirm to start the game. ${user_feedback.quit}`);
   } else {
-    if (choice.toLowerCase() === "start") {
+    if (choice.toLowerCase().trim() === "start") {
       const start_confirmation = prompt(
         `😤YOU'RE READY?! 👩‍💻Type 'START GAME' to begin playing✨🤟😻`
       );
@@ -164,14 +160,14 @@ const start_game = () => {
           `You didn't confirm to start the game. ${user_feedback.quit}`
         );
       } else {
-        if (start_confirmation.toLowerCase() === "start game") {
+        if (start_confirmation.toLowerCase().trim() === "start game") {
           game();
         } else {
           console.log(`${user_feedback.bomb}`);
           start_game();
         }
       }
-    } else if (choice.toLowerCase() === "exit") {
+    } else if (choice.toLowerCase().trim() === "exit") {
       console.log("Thank you for playing! Goodbye!🖐👲");
     } else {
       console.log(`${user_feedback.bomb}`);
@@ -180,4 +176,3 @@ const start_game = () => {
   }
 };
 
-// start_game();
