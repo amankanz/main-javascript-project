@@ -8,7 +8,7 @@ Welcome to the Rock, Paper, Scissors game! 🎮 This simple JavaScript game allo
 
 1. Open your browser's developer console. You can usually do this by right-clicking on the webpage, selecting "Inspect," and navigating to the "Console" tab.
 
-2. Type `game();` in the console and press 'Enter' to start the game.
+2. Type `start_game();` in the console and press 'Enter' to start the game.
 
 ## How to Play
 
@@ -48,7 +48,7 @@ Welcome to the Rock, Paper, Scissors game!
   My name is Darling_Code. 👲
   Follow the instructions to play the Game ☝😇
 
-  To start the game, in the console, type: game();
+  To start the game, in the console, type: start_game();
   then press 'Enter' 👩‍💻
 
 Make your 5️⃣ Moves Buddy!
@@ -69,3 +69,7 @@ you're 👍 good at this 👲🤟😻✨
 ```
 
 Enjoy the game, and may the best player win! 👊🏆
+
+Links to the codes developed by the other team members:
+https://mercedeszafeher.github.io/vanilla-js-game/
+https://github.com/raissavml/js_project
