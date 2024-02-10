@@ -116,6 +116,9 @@ const game = () => {
     if (playerSelection !== user_feedback.bomb) {
       i++;
     }
+    if (playerSelection === user_feedback.quit) {
+      break;
+    }
     console.log(playRound(playerSelection, computerSelection));
   }
 
