@@ -151,12 +151,17 @@ const start_game = () => {
       const start_confirmation = prompt(
         `😤YOU'RE READY?! 👩‍💻Type 'START GAME' to begin playing✨🤟😻`
       );
-
-      if (start_confirmation.toLowerCase() === "start game") {
-        game();
+      if (start_confirmation === null) {
+        console.log(
+          `You didn't confirm to start the game. ${user_feedback.quit}`
+        );
       } else {
-        console.log(`${user_feedback.bomb}`);
-        start_game();
+        if (start_confirmation.toLowerCase() === "start game") {
+          game();
+        } else {
+          console.log(`${user_feedback.bomb}`);
+          start_game();
+        }
       }
     } else if (choice.toLowerCase() === "exit") {
       console.log("Thank you for playing! Goodbye!🖐👲");
