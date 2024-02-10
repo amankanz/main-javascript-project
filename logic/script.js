@@ -116,6 +116,10 @@ const game = () => {
     if (playerSelection !== user_feedback.bomb) {
       i++;
     }
+    if (playerSelection === user_feedback.quit) {
+      console.log(`YOU'RE RUNNING! 🏃‍♀️🏃‍♂️🤣`);
+      break;
+    }
     console.log(playRound(playerSelection, computerSelection));
   }
 
