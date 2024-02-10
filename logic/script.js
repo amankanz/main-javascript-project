@@ -110,10 +110,13 @@ function playRound(playerSelection, computerSelection) {
 
 // Game
 const game = () => {
-  for (let i = 1; i <= 5; i++) {
+  for (let i = 1; i <= 5; i) {
     const playerSelection = player_selection();
     const computerSelection = computer_play();
 
+    if (playerSelection !== user_feedback.bomb) {
+      i++;
+    }
     console.log(playRound(playerSelection, computerSelection));
   }
 
@@ -136,8 +139,6 @@ const game = () => {
     Draw, No one Wins! 0️⃣ - 0️⃣ 😂`);
   }
 };
-
-// game();
 
 // Start Game
 const start_game = () => {
