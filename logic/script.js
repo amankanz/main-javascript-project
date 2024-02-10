@@ -1,4 +1,3 @@
-
 console.log(`Welcome to the Rock, Paper, Scissors game!
   My name is Darling_Code.👲
   Follow the instructions to play the Game ☝😇
@@ -73,7 +72,6 @@ function playRound(playerSelection, computerSelection) {
       }
     }
   } else if (playerSelection === "paper") {
-    // Paper
     if (playerSelection === "paper") {
       if (computerSelection === "scissors") {
         computerScore++;
@@ -163,4 +161,3 @@ const start_game = () => {
     }
   }
 };
-
