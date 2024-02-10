@@ -70,4 +70,6 @@ you're 👍 good at this 👲🤟😻✨
 
 Enjoy the game, and may the best player win! 👊🏆
 
-Links to the codes developed by the other team members: https://mercedeszafeher.github.io/vanilla-js-game/
+Links to the codes developed by the other team members: 
+https://mercedeszafeher.github.io/vanilla-js-game/
+https://github.com/raissavml/js_project
