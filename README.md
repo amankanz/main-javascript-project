@@ -48,7 +48,7 @@ Welcome to the Rock, Paper, Scissors game!
   My name is Darling_Code. 👲
   Follow the instructions to play the Game ☝😇
 
-  To start the game, in the console, type: game();
+  To start the game, in the console, type: start_game();
   then press 'Enter' 👩‍💻
 
 Make your 5️⃣ Moves Buddy!
@@ -70,6 +70,6 @@ you're 👍 good at this 👲🤟😻✨
 
 Enjoy the game, and may the best player win! 👊🏆
 
-Links to the codes developed by the other team members: 
+Links to the codes developed by the other team members:
 https://mercedeszafeher.github.io/vanilla-js-game/
 https://github.com/raissavml/js_project
