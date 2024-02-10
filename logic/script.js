@@ -1,6 +1,4 @@
-// ROCK PAPER SCISSORS Game!!! 👨‍💻👩‍💻
 
-// Intro Message
 console.log(`Welcome to the Rock, Paper, Scissors game!
   My name is Darling_Code.👲
   Follow the instructions to play the Game ☝😇
@@ -9,7 +7,6 @@ console.log(`Welcome to the Rock, Paper, Scissors game!
   then press 'Enter' 👩‍💻
   `);
 
-// Computer Move / Computer_selection
 const computer_play = () => {
   const random_num = Math.floor(Math.random() * 3);
 
@@ -23,7 +20,6 @@ const computer_play = () => {
   }
 };
 
-// Feedback Messages to the user
 const user_feedback = {
   userWin: "You win!😉",
   computerWin: "You Lose!🤖",
@@ -32,7 +28,6 @@ const user_feedback = {
   quit: "Looser!😆. 🏃‍♂️🏃‍♀️WHY ARE YOU RUNNING? ",
 };
 
-// Validation
 const input_validation = (userInput) => {
   if (typeof userInput === "string") {
     const text_input = userInput.toLowerCase().trim();
@@ -44,7 +39,6 @@ const input_validation = (userInput) => {
   }
 };
 
-// User Input
 const player_selection = () => {
   const user_input = prompt(`Make your 5️⃣ Moves Buddy!
   Enter 1️⃣ of the following options:
@@ -58,12 +52,10 @@ const player_selection = () => {
   }
 };
 
-// SCORES
 let userScore = 0;
 let computerScore = 0;
 
 function playRound(playerSelection, computerSelection) {
-  // Tie
   if (playerSelection === computerSelection) {
     return `${user_feedback.draw}\n
     Player's move 😇: ${playerSelection}
@@ -71,7 +63,6 @@ function playRound(playerSelection, computerSelection) {
   } else if (playerSelection === "null") {
     return `${user_feedback.quit}`;
   } else if (playerSelection === "rock") {
-    // Rock
     if (playerSelection === "rock") {
       if (computerSelection === "paper") {
         computerScore++;
@@ -93,7 +84,6 @@ function playRound(playerSelection, computerSelection) {
       }
     }
   } else if (playerSelection === "scissors") {
-    // Scissors
     if (playerSelection === "scissors") {
       if (computerSelection === "rock") {
         computerScore++;
@@ -108,7 +98,6 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-// Game
 const game = () => {
   for (let i = 1; i <= 5; i) {
     const playerSelection = player_selection();
@@ -143,7 +132,6 @@ const game = () => {
   }
 };
 
-// Start Game
 const start_game = () => {
   const choice = prompt(
     "👩‍💻Type 'START' to begin the game or 'EXIT' to quit!👲"
